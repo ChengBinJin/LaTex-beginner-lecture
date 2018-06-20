@@ -1,231 +1,85 @@
 %\documentclass[11pt]{article}
-\documentclass[footnote]{oblivoir}
+\documentclass[•]{oblivoir}
 
-\usepackage{mathtools}
-\usepackage{amssymb} %% amsmath와 amssymb는 mathspec 이전
-\usepackage{amsthm}
-\usepackage{amsmath}
-%\usepackage[MnSymbol]{mathspec}  %% kotex 이전
-\usepackage{kotex}
-\usepackage{bbm}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{tabu}
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{multirow}
+\definecolor{Plum}{rgb}{0.56, 0.27, 0.52}
+\definecolor{OliveDrab}{rgb}{0.42, 0.56, 0.14}
+\definecolor{RedViolet}{rgb}{0.78, 0.08, 0.52}
+\definecolor{Brown}{rgb}{0.65, 0.16, 0.16}
+\definecolor{Blue}{rgb}{0, 0, 1}
 
-\theoremstyle{definition}
-\newtheorem{thm}{정리}[section]
-\newtheorem{defn}[thm]{정의}
-
-\allowdisplaybreaks
-
-\newcommand{\bZ}{{\mathbb{Z}}}
-\newcommand{\norm}[1]{{\left \Vert #1 \right \Vert}}
+%\grapicspath{{./pictures01}{./picture02}}
+\graphicspath{{./pictures/}}
 
 \begin{document}
-hello world! $f(x)$
+\includegraphics[width=0.8\textwidth]{img01.jpg}
+%\includegraphics[width=0.8\textwidth, page={3}]{RedVelvet.pdf}
 
-\[\int_{a}^b f(x)dx \]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img02}
+\end{center}
 
-\begin{equation}
-\int_{a}^b f(x)dx
-\end{equation}
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.8\textwidth]{img03}
+\caption{촉각센서 이미지}\label{fig:1}
+\end{figure}
 
-$P_1$\을 재화1의 가격이라고 하고, $P_2$\를 재화 2의 가격이라 하자. 소비자가 사용할 수 있는 예산의 한도가 $m$원까지일 때, 생각할 수 있는 제약모델은 다음과 같다:
+\lipsum
 
-\begin{equation}
-p_1 x_1 + p_2 x_2 \leq m.
-\end{equation}
+그림 \ref{fig:1}\를 참고하라.
 
-자주 사용되는 효용함수로 \textbf{Cobb-Douglas} 효용함수가 있다. 이 함수의 정의는 다음과 같다:
-\[u(x_1, x_2) = x_1^c x_2^d\]
+\begin{figure}
+\centering
+\subfloat[img01]
+{\includegraphics[width=0.3\textwidth]{img01.jpg}}
+\quad
+\subfloat[img02]
+{\includegraphics[width=0.3\textwidth]{img02.jpg}}
+\quad
+\subfloat[img03]
+{\includegraphics[width=0.3\textwidth]{img03.jpg}}
+\caption{촉각센서 이미지 세트 1}
+\end{figure}
 
-$\int_a^b f(x)dx$
+\begin{figure}
+\centering
+\ContinuedFloat
+\subfloat[img01]
+{\includegraphics[width=0.3\textwidth]{img01.jpg}}
+\quad
+\subfloat[img02]
+{\includegraphics[width=0.3\textwidth]{img02.jpg}}
+\quad
+\subfloat[img03]
+{\includegraphics[width=0.3\textwidth]{img03.jpg}}
+\caption{촉각센서 이미지 세트 1}
+\end{figure}
 
-\[ \int_{a}^b f(x)dx \]
+\begin{tabu}spread 10pt
+	{|X|[2pt, OliveDrab] X|[5pt,Plum] X|[10pt, RedViolet]}
+	탄한 녹색 & 자두색 & 붉은 빛 오렌지
+\end{tabu}
 
-\begin{equation}
-\int_{a}^b f(x)dx
-\end{equation}
+\begin{tabu} to 0.4\textwidth {X[c] | X[c]}
+\hline
+\multirow{5}{*}{레드벨벳} 
+&아이린\\ \tabucline{2}
+&슬기\\ \tabucline{2}
+&웬디\\ \tabucline{2}
+&조이\\ \tabucline{2}
+&예리\\ \hline
+\end{tabu}
 
-\begin{equation}
-f(x) \hspace{4cm} g(x)
-\end{equation}
-
-\begin{equation}
-a^x+y = a^x a^y
-\end{equation}
-
-\begin{equation*}
-a^{x+y} = a^x a^y
-\end{equation*}
-
-\[
-a^{x+y} = a^x a^y
-\]
-
-\[\begin{matrix}
-A & B & C \\
-d & e & f \\
-1 & 2 & 3 \\
-\end{matrix}\]
-
-\[\begin{pmatrix}
-A & B & C \\
-d & e & f \\
-1 & 2 & 3 \\
-\end{pmatrix}\]
-
-\[\begin{bmatrix}
-A & B & C \\
-d & e & f \\
-1 & 2 & 3 \\
-\end{bmatrix}\]
-
-
-$\underset{under}{baseline}$ \\
-
-$\overset{over}{baseline}$
-
-\[
-\sum_{\substack{1\leq i\leq p \\
-1 \leq j \leq q \\
-1 \leq k \leq r}}
-a_{ij} b_{jk} c_{ki}
-\]
-
-\section{Hi}
-\begin{thm}
-\[ A=\{ x \in \mathbb{R} | x^2=a, \text{where $a$ is positive}\}\]
-\end{thm}
-\begin{proof}
-ABC
-\end{proof}
-
-\section{Hello}
-\begin{defn} \label{thm:1}
-$\mathbb{R}$ is the set of all real numbers.
-\end{defn}
-\begin{proof}[증명]
-DEF
-\[ ABC \qedhere \]
-\end{proof}
-
-정리 \ref{thm:1}에 의해서
-
-Note that
-\begin{equation} \label{eq:1}
-A \leq B
-\end{equation}
-and
-\begin{equation} \label{eq:2}
-B \leq A.
-\end{equation}
-So by (\ref{eq:1}) abd \eqref{eq:2}, we conclude that $A=B$.
-
-\begin{equation}
-\begin{split}
-Hf(x)&=\mathrm{p.v.}\frac{1}{\pi}\int_{\mathbb{R}} \frac{f(y)}{x-y}dy\\
-&=\lim_{\varepsilon \rightarrow 0}\frac{1}{\pi} \int_{|x-y|>\varepsilon}\frac{f(y)}{x-y}dy
-\end{split}
-\end{equation}
-
-\begin{equation}
-\begin{aligned}
-Hf(x)&=\mathrm{p.v.}\frac{1}{\pi}\int_{\mathbb{R}} \frac{f(y)}{x-y}dy\\
-&=\lim_{\varepsilon \rightarrow 0}\frac{1}{\pi} \int_{|x-y|>\varepsilon}\frac{f(y)}{x-y}dy
-\end{aligned}
-\end{equation}
-
-\begin{align}
-Hf(x)&=\mathrm{p.v.}\frac{1}{\pi}\int_{\mathbb{R}} \frac{f(y)}{x-y}dy\\
-&=\lim_{\varepsilon \rightarrow 0}\frac{1}{\pi} \int_{|x-y|>\varepsilon}\frac{f(y)}{x-y}dy
-\end{align}
-
-\begin{align}
-Hf(x)&=\mathrm{p.v.}\frac{1}{\pi}\int_{\mathbb{R}} \frac{f(y)}{x-y}dy\\
-&=\lim_{\varepsilon \rightarrow 0}\frac{1}{\pi} \int_{|x-y|>\varepsilon}\frac{f(y)}{x-y}dy \nonumber
-\end{align}
-
-\begin{align*}
-Hf(x)&=\mathrm{p.v.}\frac{1}{\pi}\int_{\mathbb{R}} \frac{f(y)}{x-y}dy\\
-&=\lim_{\varepsilon \rightarrow 0}\frac{1}{\pi} \int_{|x-y|>\varepsilon}\frac{f(y)}{x-y}dy
-\end{align*}
-
-Cobb-Douglas 모델의 MRS(Marginal rate of substitution)\를 구해보도록 하자.
-$u(x_1, x_2)=x_1^c x_2^c$이라 할때,
-\begin{align*}
-\mathrm{RMS}&=-\frac{\partial u(x_1,x_2)/ \partial x_1}{\partial u (x_1, x_2) / \partial x_2}\\
-&=-\frac{cx_1^{c-1} x_2^{d}}{dx_1^c x_2^{d-1}} \\
-&=-\frac{cx_2}{dx_1}
-\end{align*}
-와 같다.
-
-\begin{align*}
-a_{11}& = b_{11}&
-a_{12}& = b_{12}\\
-a_{21}& = b_{21}&
-a_{22}& = b_{22}+c_{22}
-\end{align*}
-
-\begin{flalign*}
-a_{11}& = b_{11}&
-a_{12}& = b_{12}\\
-a_{21}& = b_{21}&
-a_{22}& = b_{22} + c_{22}
-\end{flalign*}
-
-align환경이면서 한 행에 부연설명을 하고자 할 때 적합한 환경이다.
-\begin{alignat}{2} %영역을 크게 두 개로 나눔
-x& = y_1 - y_2 + y_3 - y_5 + y_8 - \dots &\quad& \text{by }\\
-& = y' \circ y^* && \text{by } \\
-& = y(0) y' && \text {by Axiom 1.}
-\end{alignat}
-
-$\mathbbm{1}$
-
-$\mathbbm{ABCdef12}$
-
-$\mathbbm{ABCdef12}$
-
-$\mathcal{ABC}$
-
-%$\mathscr{ABC}$
-
-%$\mathds{ABC1}$
-
-%$\mathfrack{ABCdef123}$
-
-$\mathbb{Z}$
-
-$\bZ$
-
-$\norm{f}$
-
-\[ \norm{\int_a^b f(x)} \]
-
-$f\in L^p(\mathbb{R}) (1<p<\infty)$에 대하여 \[ Hf(x) = \mathrm{p.v} \int_{\mathbb{R}} \frac{f(y)}{\pi (x-y)dy}  \]
-와 같이 정의한 변환을 힐버트 변환이라 한다. \\
-
-$f\in L^p(\mathbb{R}) (1<p<\infty)$에 대하여
-
-\[Hf(x) = \mathrm{p.v} \int_{\mathbb{R}} \frac{f(y)}{\pi (x-y)dy}  \]
-
-와 같이 정의한 변환을 힐버트 변환이라 한다.
-
-\[ \sum_{n=1}^\infty |a_n b_n| \leq \left( \sum_{n=1}^\infty |a_n|^p \right)^{\frac{1}{p}} \left(\sum_{n=1}^\infty |b_n|^q \right)^{\frac{1}{q}}
-\]
-
-$f\in {L^1(\mathbb{R}^d)}$이라는 것은 $\displaystyle \int_{\mathbb{R}^d} |f(x)|dx <\infty$일 때를 말한다.
-
-\[
-\begin{pmatrix*}[r]
--2 & 3\\
-1  & -2
-\end{pmatrix*}
-\]
-
-\[
-\begin{PDEcases}
-
-\end{PDEcases}
-\]
-
+\small
+\begin{tabu}{ X[0.7] | X[1.4] | X[1.2] | X[1] | X[1] | X[0.7] | X[0.5] }
+& 더불어민주당 & 자유한국당 & 국민의당 & 바른정당 & 정의당 & 기타 \\ \hline
+의석수 & & & & & &
+\end{tabu}
 
 \end{document}
