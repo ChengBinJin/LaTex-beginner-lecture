@@ -1,0 +1,34 @@
+\documentclass[chapter, footnote]{oblivoir}
+
+\usepackage{mathtools, amsthm, amssymb}
+\usepackage{graphicx, jiwonlipsum}
+\graphicspath{{pictures/}}
+
+\usepackage{tabu}
+
+\linespread{1.4}
+
+\newtheorem{thm}{정리}[chapter]
+\newtheorem{cor}[thm]{보조정리}
+\renewcommand{\proofname}{증명}
+
+\DeclareRobustCommand{\myem}[2][\empty]{%
+\ifx#1\empty
+#2\index{#2}%
+\else
+#2\index{#2}(#1)\index{#1}%
+\fi}
+
+\makeindex
+
+\begin{document}
+\tableofcontents*
+
+\input{chap1-fluctuations}
+\input{chap2-curve_surface}
+\input{chap3-jiwon}
+\input{chap4-Letters}
+
+\printindex
+
+\end{document}

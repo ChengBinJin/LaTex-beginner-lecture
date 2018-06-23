@@ -66,6 +66,11 @@
 	탄한 녹색 & 자두색 & 붉은 빛 오렌지
 \end{tabu}
 
+
+Good tables generation website!
+% https://www.tablesgenerator.com/
+
+
 \begin{tabu} to 0.4\textwidth {X[c] | X[c]}
 \hline
 \multirow{5}{*}{레드벨벳} 
@@ -77,7 +82,7 @@
 \end{tabu}
 
 \small
-\begin{tabu}{ X[0.7] | X[1.4] | X[1.2] | X[1] | X[1] | X[0.7] | X[0.5] }
+\begin{tabu}{ X[0.7,c] | X[1.4,c] | X[1.2,c] | X[1,c] | X[1,c] | X[0.7,c] | X[0.5,c] }
 & 더불어민주당 & 자유한국당 & 국민의당 & 바른정당 & 정의당 & 기타 \\ \hline
 의석수 & & & & & &
 \end{tabu}
