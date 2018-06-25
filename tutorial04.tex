@@ -1,4 +1,7 @@
-\documentclass[chapter, footnote]{oblivoir}
+\documentclass[chapter, footnote, a4paper, 11pt]{oblivoir}
+
+\usepackage{fapapersize}
+\usefapapersize{188mm,257mm,25mm,30mm,25mm,30mm}
 
 \usepackage{mathtools, amsthm, amssymb}
 \usepackage{graphicx, jiwonlipsum}
@@ -21,7 +24,9 @@
 
 \makeindex
 
+\setmainhangulfont{HMKMM.TTF}
 \begin{document}
+
 \tableofcontents*
 
 \input{chap1-fluctuations}
