@@ -8,8 +8,8 @@
 \graphicspath{{pictures/}}
 
 \usepackage{tabu}
-
-\linespread{1.4}
+\SetHangulspace{1.4}{1.3}
+%\linespread{1.4}
 
 \newtheorem{thm}{정리}[chapter]
 \newtheorem{cor}[thm]{보조정리}
@@ -24,8 +24,16 @@
 
 \makeindex
 
+\makepagestyle{myheading}
+\makeevenfoot{myheading}{\thepage}{}{}
+\makeoddfoot{myheading}{}{}{\thepage}
+\makeevenhead{myheading}{2017-1\quad 현대사회의 이해}{}{20170001 홍길동}
+\makeoddhead{myheading}{20170001 홍길동}{}{기말고사 대체과제}
 \setmainhangulfont{HMKMM.TTF}
 \begin{document}
+
+%\pagestyle{hangul}
+\pagestyle{myheading}
 
 \tableofcontents*
 
