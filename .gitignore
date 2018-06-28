@@ -1,3 +1,5 @@
 *.tex.bak
 *.sty.bak
 *.log
+*.bib.bak
+

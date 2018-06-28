@@ -11,6 +11,10 @@
 \SetHangulspace{1.4}{1.3}
 %\linespread{1.4}
 
+\usepackage[normalem]{ulem}
+\usepackage{embrac}
+\usepackage{mdframed}
+
 \newtheorem{thm}{정리}[chapter]
 \newtheorem{cor}[thm]{보조정리}
 \renewcommand{\proofname}{증명}
@@ -36,6 +40,16 @@
 \pagestyle{myheading}
 
 \tableofcontents*
+
+\dotemph{한글}
+
+다음 보기에서 명사가 \uline{아닌} 것은?
+
+\textit{안녕 (Hello)}
+
+\begin{mdframed}[frametitle=Test]
+Test Test Test
+\end{mdframed}
 
 \input{chap1-fluctuations}
 \input{chap2-curve_surface}
