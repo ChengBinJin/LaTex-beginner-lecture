@@ -1,55 +1,12 @@
 \documentclass[chapter, footnote, a4paper, 11pt]{oblivoir}
 
-\usepackage{fapapersize}
-\usefapapersize{188mm,257mm,25mm,30mm,25mm,30mm}
+\usepackage{KNUworkshop2013}
 
-\usepackage{mathtools, amsthm, amssymb}
-\usepackage{graphicx, jiwonlipsum}
-\graphicspath{{pictures/}}
+\chapterstyle{KNUchapter}
+\pagestyle{KNUworkshop}
 
-\usepackage{tabu}
-\SetHangulspace{1.4}{1.3}
-%\linespread{1.4}
-
-\usepackage[normalem]{ulem}
-\usepackage{embrac}
-\usepackage{mdframed}
-
-\newtheorem{thm}{정리}[chapter]
-\newtheorem{cor}[thm]{보조정리}
-\renewcommand{\proofname}{증명}
-
-\DeclareRobustCommand{\myem}[2][\empty]{%
-\ifx#1\empty
-#2\index{#2}%
-\else
-#2\index{#2}(#1)\index{#1}%
-\fi}
-
-\makeindex
-
-\makepagestyle{myheading}
-\makeevenfoot{myheading}{\thepage}{}{}
-\makeoddfoot{myheading}{}{}{\thepage}
-\makeevenhead{myheading}{2017-1\quad 현대사회의 이해}{}{20170001 홍길동}
-\makeoddhead{myheading}{20170001 홍길동}{}{기말고사 대체과제}
-\setmainhangulfont{HMKMM.TTF}
 \begin{document}
-
-%\pagestyle{hangul}
-\pagestyle{myheading}
-
 \tableofcontents*
-
-\dotemph{한글}
-
-다음 보기에서 명사가 \uline{아닌} 것은?
-
-\textit{안녕 (Hello)}
-
-\begin{mdframed}[frametitle=Test]
-Test Test Test
-\end{mdframed}
 
 \input{chap1-fluctuations}
 \input{chap2-curve_surface}

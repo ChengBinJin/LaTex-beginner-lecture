@@ -1,0 +1,402 @@
+%%% patch to chapterstyles of memoir
+%%%
+%%% Karnes Kim, 2010.
+%%%
+%%% public domain.
+%%
+%%
+%% ob+
+%% bianchi,bringhurst,brotherton,chappell,culver,
+%% dash,demo2,demo3,ell,ger,lyhne,madsen,pedersen,
+%% southall,thatcher,veelo,verville,crosshead,
+%% dowding,komalike,ntglike,tandh,wilsondob
+%%
+
+\makechapterstyle{obbianchi}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapnamefont}{\normalfont\Large\sffamily\itshape}
+  \renewcommand*{\chapnumfont}{\normalfont\huge}
+%  \renewcommand*{\printchaptername}{%
+%    \chapnamefont\centering\@chapapp}
+  \renewcommand*{\prechapternum}{\chapnamefont\centering 제}
+  \renewcommand*{\postchapternum}{\chapnamefont 장}
+  \renewcommand*{\hchaptertitlehead}{제\,\thechapter\,장}
+  \renewcommand*{\printchapternum}{\chapnumfont \textit{\thechapter}}
+  \renewcommand*{\chaptitlefont}{\normalfont\Huge\sffamily}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \hrule\vskip\onelineskip \centering \chaptitlefont\textbf{##1}\par}
+  \renewcommand*{\afterchaptertitle}{\vskip\onelineskip \hrule\vskip
+    \afterchapskip}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\chapnumfont \textit{9}}\afterchapternum}}
+
+\makechapterstyle{obbringhurst}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapterheadstart}{}
+%  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\hchaptertitlehead}{}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{}
+  \renewcommand*{\afterchapternum}{}
+  \renewcommand*{\printchaptertitle}[1]{%
+%%%    \raggedright\Large\scshape\MakeLowercase{##1}}
+    \memRTLraggedright\Large\scshape\MakeLowercase{##1}}
+  \renewcommand*{\afterchaptertitle}{%
+  \vskip\onelineskip \hrule\vskip\onelineskip}}
+
+\makechapterstyle{obbrotherton}{%
+  \chapterstyle{default}
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\hchaptertitlehead}{\numtoName{\c@chapter}}
+  \renewcommand*{\printchapternum}{\chapnumfont
+    \ifanappendix \thechapter \else \numtoName{\c@chapter}\fi}}
+
+\makechapterstyle{obchappell}{%
+  \chapterstyle{default}
+  \setlength{\beforechapskip}{0pt}
+  \renewcommand*{\chapnamefont}{\large\centering}
+  \renewcommand*{\chapnumfont}{\large}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\printchaptername \chapnumfont 1}
+    \afterchapternum
+    \vskip \onelineskip \vskip -\topskip}
+  \renewcommand*{\chaptitlefont}{\Large\itshape}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \hrule\vskip\onelineskip \centering\chaptitlefont ##1}}
+
+\makechapterstyle{obculver}{%
+  \chapterstyle{default}
+  \chapterstyle{article}%
+  \renewcommand*{\thechapter}{\Roman{chapter}}
+  \renewcommand*{\printchapternum}{% center number/title
+    \centering\chapnumfont \thechapter\space\space}%
+  \renewcommand*{\printchapternonum}{\centering}
+  \renewcommand*{\clearforchapter}{}% no new page
+  \aliaspagestyle{chapter}{headings}}% no special pagestyle
+
+\makechapterstyle{obdash}{%
+  \chapterstyle{default}
+  \setlength{\beforechapskip}{5\onelineskip}
+%  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\thechapter}{\arabic{chapter}}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\chapnumfont}{\normalfont\large}
+  \settoheight{\midchapskip}{\chapnumfont 1}
+  \renewcommand*{\printchapternum}{\centering \chapnumfont
+    \rule[0.5\midchapskip]{1em}{0.4pt} \thechapter\
+    \rule[0.5\midchapskip]{1em}{0.4pt}}
+  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 0.5\onelineskip}
+  \renewcommand*{\printchapternonum}{\centering
+                 \vphantom{\chapnumfont 1}\afterchapternum}
+  \renewcommand*{\chaptitlefont}{\normalfont\Large}
+  \renewcommand*{\printchaptertitle}[1]{\centering \chaptitlefont ##1}
+  \setlength{\afterchapskip}{2.5\onelineskip}}
+
+\makechapterstyle{obdemo2}{%
+  \chapterstyle{default}
+%  \renewcommand*{\printchaptername}{\centering}
+  \renewcommand*{\prechapternum}{\centering}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\printchapternum}{\chapnumfont
+     \ifanappendix \thechapter \else \numtoName{\c@chapter}\fi}
+  \renewcommand*{\chaptitlefont}{\normalfont\Huge\sffamily}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \hrule\vskip\onelineskip \raggedleft \chaptitlefont ##1}
+  \renewcommand*{\afterchaptertitle}{%
+    \vskip\onelineskip \hrule\vskip \afterchapskip}
+  \setlength{\beforechapskip}{3\baselineskip}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\chapnumfont One}
+    \afterchapternum%
+    \vskip\topskip}
+  \setlength{\beforechapskip}{2\onelineskip}}
+
+\makechapterstyle{obdemo3}{%
+  \chapterstyle{default}
+%  \renewcommand*{\printchaptername}{\centering}
+  \renewcommand*{\prechapternum}{\centering}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chapnumfont}{\normalfont\HUGE\itshape}
+  \renewcommand*{\printchapternum}{\chapnumfont
+     \ifanappendix \thechapter \else \numtoName{\c@chapter}\fi}
+  \renewcommand*{\chaptitlefont}{\normalfont\Huge\sffamily}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \hrule\vskip\onelineskip \raggedleft \chaptitlefont ##1}
+  \renewcommand*{\afterchaptertitle}{%
+    \vskip\onelineskip \hrule\vskip \afterchapskip}
+  \setlength{\beforechapskip}{0pt}
+  \setlength{\midchapskip}{2\onelineskip}
+  \setlength{\afterchapskip}{2\onelineskip}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\chapnumfont One}
+    \afterchapternum%
+    \vskip\topskip}}
+
+\makechapterstyle{obell}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapnumfont}{\normalfont\HUGE\sffamily}
+  \renewcommand*{\chaptitlefont}{\normalfont\huge\sffamily}
+  \settowidth{\chapindent}{\chapnumfont 111}
+  \renewcommand*{\chapterheadstart}{\begingroup
+    \vspace*{\beforechapskip}%
+    \begin{adjustwidth}{}{-\chapindent}%
+    \hrulefill
+    \smash{\rule{0.4pt}{15mm}}
+    \end{adjustwidth}\endgroup}
+%  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\thechapter}{\arabic{chapter}}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{%
+    \begin{adjustwidth}{}{-\chapindent}
+    \hfill
+    \raisebox{10mm}[0pt][0pt]{\chapnumfont \thechapter}%
+                              \hspace*{1em}
+    \end{adjustwidth}\vspace*{-3.0\onelineskip}}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \vskip\onelineskip
+    \raggedleft {\chaptitlefont ##1}\par\nobreak}}
+
+\makechapterstyle{obger}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapterheadstart}{\vspace*{\beforechapskip}
+  \mbox{}\\\mbox{}\rule[0pt]{\textwidth}{0.4pt}\par}
+  \setlength{\midchapskip}{20pt}
+  \renewcommand*{\printchaptertitle}[1]{\chaptitlefont ##1
+    \\\mbox{}\rule[5pt]{\textwidth}{0.4pt}}}
+
+\makechapterstyle{oblyhne}{%  needs graphicx package
+  \chapterstyle{default}
+  \setlength{\beforechapskip}{1.5cm}
+  \setlength{\afterchapskip}{1cm}
+  \setlength{\midchapskip}{2cm}
+  \renewcommand*{\chapnamefont}{\normalfont\normalsize\scshape\raggedleft}
+  \renewcommand*{\chaptitlefont}{\normalfont\normalsize\bfseries\sffamily\raggedleft}
+  \renewcommand*{\prechapternum}{\chapnamefont Chapter}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{\makebox[0pt][l]{\hspace{0.2em}%
+    \resizebox{!}{2ex}{\chapnamefont\bfseries\sffamily\thechapter}}}
+  \renewcommand*{\afterchapternum}{\par\hspace{1.5cm}\hrule\vspace{0.2cm}}
+ \renewcommand*{\printchapternonum}{\vphantom{\chapnamefont 1}\afterchapternum}
+  \renewcommand*{\afterchaptertitle}{\vskip 0.2cm
+    \hrule\vskip\afterchapskip}}
+
+\makechapterstyle{obmadsen}{% requires graphicx package
+  \chapterstyle{default}
+%  \renewcommand*{\chapnamefont}{%
+%    \normalfont\Large\scshape\raggedleft}
+  \renewcommand*{\prechapternum}{\normalfont\Large\scshape\raggedleft}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chaptitlefont}{%
+    \normalfont\Huge\bfseries\sffamily\raggedleft}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{%
+    \makebox[0pt][l]{\hspace{0.4em}
+      \resizebox{!}{4ex}{%
+        \chapnamefont\bfseries\sffamily\thechapter}
+    }%
+  }%
+  \renewcommand*{\printchapternonum}{%
+    \chapnamefont \phantom{\printchaptername \chapternamenum \printchapternum}
+    \afterchapternum %
+  }%
+  \renewcommand*{\afterchapternum}{%
+    \par\hspace{1.5cm}\hrule\vskip\midchapskip}}
+
+%\newcommand*{\colorchapnum}{}
+%\newcommand*{\colorchaptitle}{}
+\makechapterstyle{obpedersen}{%
+  \chapterstyle{default}
+  \setlength{\beforechapskip}{-20pt}
+  \setlength{\afterchapskip}{10pt}
+  \renewcommand*{\chapnamefont}{\normalfont\LARGE\itshape}
+  \renewcommand*{\chapnumfont}{\normalfont\HUGE\itshape\colorchapnum}
+  \renewcommand*{\chaptitlefont}{\normalfont\huge\itshape\colorchaptitle}
+  \renewcommand*{\afterchapternum}{}
+%  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \setlength{\midchapskip}{20mm}% was \numberheight
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\printchapternum}{%
+    \sidebar{\raisebox{0pt}[0pt][0pt]{\makebox[0pt][l]{%
+      \resizebox{!}{\midchapskip}{\chapnumfont\thechapter}}}}}
+  \renewcommand*{\printchaptertitle}[1]{\chaptitlefont ##1}}
+
+%% Thomas Dye's southall chapter style
+\makechapterstyle{obsouthall}{%
+  \chapterstyle{default}
+  \setlength{\afterchapskip}{5\baselineskip}
+  \setlength{\beforechapskip}{36pt}%    \headindent
+  \setlength{\midchapskip}{\textwidth}% \rightblock
+  \addtolength{\midchapskip}{-\beforechapskip}
+  \renewcommand*{\chapterheadstart}{\vspace*{2\baselineskip}}
+%%%  \renewcommand*{\chaptitlefont}{\huge\rmfamily\raggedright}
+  \renewcommand*{\chaptitlefont}{\huge\rmfamily\memRTLraggedright}
+  \renewcommand*{\chapnumfont}{\chaptitlefont}
+%  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\afterchapternum}{}
+  \renewcommand*{\printchapternum}{%
+    \begin{minipage}[t][\baselineskip][b]{\beforechapskip}
+      {\vspace{0pt}\chapnumfont%%%\figureversion{lining}
+                   \thechapter}
+    \end{minipage}}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \hfill\begin{minipage}[t]{\midchapskip}
+      {\vspace{0pt}\chaptitlefont ##1\par}\end{minipage}}
+  \renewcommand*{\afterchaptertitle}{%
+    \par\vspace{\baselineskip}%
+    \hrulefill \par\nobreak\noindent \vskip \afterchapskip}}
+
+\makechapterstyle{obthatcher}{%
+  \chapterstyle{default}
+  \renewcommand*{\chapterheadstart}{}
+%  \renewcommand*{\printchaptername}{%
+%    \centerline{\chapnumfont{\@chapapp\ \thechapter}}}
+  \renewcommand*{\prechapternum}{\centerline{\chapnumfont Chapter\ \thechapter}}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chapternamenum}{}
+  \renewcommand*{\chapnumfont}{\normalfont\scshape\MakeLowercase}
+  \renewcommand*{\printchapternum}{}
+  \renewcommand*{\afterchapternum}{%
+    \par\centerline{\parbox{0.5in}{\hrulefill}}\par}
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\chapnumfont \@chapapp 1}\par
+    \parbox{0.5in}{}\par}
+  \renewcommand*{\chaptitlefont}{\normalfont\large}
+  \renewcommand*{\printchaptertitle}[1]{%
+    \centering \chaptitlefont\MakeUppercase{##1}}}
+
+\makechapterstyle{obveelo}{%
+   \setlength{\afterchapskip}{40pt}
+  \renewcommand*{\chapterheadstart}{\vspace*{40pt}}
+  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
+   \renewcommand*{\chapnamefont}{\normalfont\LARGE\flushright}
+   \renewcommand*{\chapnumfont}{\normalfont\HUGE}
+   \renewcommand*{\chaptitlefont}{\normalfont\HUGE\bfseries\flushright}
+%   \renewcommand*{\printchaptername}{%
+%     \chapnamefont\MakeUppercase{\@chapapp}}
+  \renewcommand*{\prechapternum}{\chapnamefont\MakeUppercase{Chapter}}
+  \renewcommand*{\postchapternum}{}
+   \renewcommand*{\chapternamenum}{}
+  \setlength{\beforechapskip}{18mm}%  \numberheight
+  \setlength{\midchapskip}{\paperwidth}% \barlength
+  \addtolength{\midchapskip}{-\textwidth}
+  \addtolength{\midchapskip}{-\spinemargin}
+   \renewcommand*{\printchapternum}{%
+     \makebox[0pt][l]{%
+       \hspace{.8em}%
+       \resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
+       \hspace{.8em}%
+       \rule{\midchapskip}{\beforechapskip}%
+     }%
+   }%
+   \makeoddfoot{plain}{}{}{\thepage}}
+
+\makechapterstyle{obverville}{%
+ % \chapterstyle{default}
+  \setlength{\beforechapskip}{0pt}
+%  \renewcommand*{\printchaptername}{}
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\printchapternum}{%
+    \hrule \vskip 0.5\onelineskip
+    \Huge \centering \thechapter.\ }
+  \renewcommand*{\printchapternonum}{%
+    \hrule \vskip 0.5\onelineskip
+    \Huge \centering}
+  \renewcommand*{\afterchapternum}{}
+  \setlength{\midchapskip}{0pt}
+  \renewcommand*{\printchaptertitle}[1]{%
+    ##1 \par
+    \vskip 0.5\onelineskip
+   \hrule}}
+
+\makechapterstyle{obcrosshead}{%
+  \setlength{\beforechapskip}{2\onelineskip}%
+  \renewcommand*{\chapterheadstart}{\vspace{\beforechapskip}}%
+  \setlength{\afterchapskip}{2\onelineskip \@plus .2\onelineskip
+                             \@minus 0.2\onelineskip}%
+%  \renewcommand*{\printchaptername}{}%
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chapternamenum}{}%
+  \renewcommand*{\chapnumfont}{\normalfont\LARGE\bfseries}%
+  \renewcommand*{\chaptitlefont}{\chapnumfont}%
+  \renewcommand*{\printchapternum}{%
+    \centering\chapnumfont \thechapter\quad}%
+  \renewcommand{\afterchapternum}{}%
+  \renewcommand*{\printchapternonum}{\centering}}
+
+\makechapterstyle{obdowding}{%
+  \setlength{\beforechapskip}{2\onelineskip}%
+  \setlength{\afterchapskip}{1.5\onelineskip \@plus .1\onelineskip
+                            \@minus 0.167\onelineskip}%
+  \renewcommand*{\chapnamefont}{\normalfont}%
+  \renewcommand*{\chapnumfont}{\chapnamefont}%
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\printchapternum}{\centering\chapnumfont \ifanappendix \thechapter
+                 \else \numtoName{\c@chapter}\fi}%
+  \renewcommand*{\chaptitlefont}{\normalfont\itshape\huge\centering}%
+  \renewcommand*{\printchapternonum}{%
+    \vphantom{\printchaptername}\vskip\midchapskip}}
+
+\makechapterstyle{obkomalike}{%
+  \setlength{\beforechapskip}{2\onelineskip}%
+  \setlength{\afterchapskip}{1.5\onelineskip \@plus .1\onelineskip
+                             \@minus 0.167\onelineskip}%
+%  \renewcommand*{\printchaptername}{}%
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chapternamenum}{}%
+  \renewcommand*{\chapnumfont}{\normalfont\LARGE\sffamily\bfseries}%
+  \renewcommand*{\printchapternum}{\chapnumfont \thechapter\space\space}%
+  \renewcommand*{\afterchapternum}{}%
+  \renewcommand*{\chaptitlefont}{\normalfont\LARGE\sffamily\bfseries}}
+
+\makechapterstyle{obntglike}{%
+  \setlength{\beforechapskip}{50pt \@plus 20pt}%
+  \renewcommand*{\chapnamefont}{\normalfont\Large\bfseries}%
+  \renewcommand*{\chapnumfont}{\normalfont\Large\bfseries}%
+  \renewcommand*{\chaptitlefont}{\normalfont\Large\bfseries}}
+
+\makechapterstyle{obtandh}{%
+  \setlength{\beforechapskip}{1\onelineskip}%
+  \setlength{\afterchapskip}{2\onelineskip \@plus .1\onelineskip
+                            \@minus 0.167\onelineskip}%
+%  \renewcommand*{\printchaptername}{}%
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chapternamenum}{}%
+  \renewcommand*{\chapnumfont}{\normalfont\huge\bfseries}%
+  \renewcommand*{\printchapternum}{\chapnumfont \thechapter\quad}%
+  \renewcommand*{\afterchapternum}{}%
+%%%  \renewcommand*{\chaptitlefont}{\chapnumfont\raggedright}}
+  \renewcommand*{\chaptitlefont}{\chapnumfont\memRTLraggedright}}
+
+\makechapterstyle{obwilsondob}{%
+  \setlength{\beforechapskip}{2\onelineskip}%
+  \setlength{\afterchapskip}{4\onelineskip \@plus .1\onelineskip
+                             \@minus 0.167\onelineskip}%
+%  \renewcommand*{\printchaptername}{}%
+  \renewcommand*{\prechapternum}{}
+  \renewcommand*{\postchapternum}{}
+  \renewcommand*{\chapternamenum}{}%
+  \renewcommand*{\chapnumfont}{\normalfont\Huge\itshape}%
+  \renewcommand*{\printchapternum}{\raggedleft\chapnumfont \thechapter\quad}%
+  \renewcommand*{\afterchapternum}{}%
+  \renewcommand*{\chaptitlefont}{\chapnumfont}%
+  \renewcommand*{\printchapternonum}{\raggedleft}}
+
+\endinput

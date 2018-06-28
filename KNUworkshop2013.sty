@@ -1,0 +1,339 @@
+% !TEX root = Modi_RobustCode.tex
+% \RequirePackage[a4,cross,center]{crop}
+
+\RequirePackage{amsmath,amsthm}
+
+\RequirePackage[hangul]{kotex}
+% \RequirePackage{dhucs-untype1}
+
+\RequirePackage{blindtext}
+\RequirePackage{jiwonlipsum}
+
+% \RequirePackage{ifpdf}
+% \RequirePackage{epstopdf}
+
+% \ifpdf
+% \RequirePackage[pdftex,unicode,bookmarks]{hyperref}
+% \RequirePackage{graphicx}
+% \input glyphtounicode
+% \pdfgentounicode=1
+% \else
+% \RequirePackage[dvipdfmx,unicode,bookmarks]{hyperref}
+\RequirePackage{graphicx}
+% \DeclareGraphicsExtensions{.jpg,.pdf}
+% \DeclareGraphicsRule{.jpg}{eps}{.xbb}{}
+% \DeclareGraphicsRule{.pdf}{eps}{.xbb}{}
+% \fi
+
+\graphicspath{{figure/}}  
+
+
+\RequirePackage{tabu}
+
+%% 폰트 설정
+%\setmainfont[Ligatures=TeX]{Minion Pro}
+%\setsansfont[Ligatures=TeX,
+%   Scale=MatchUppercase,BoldFont={* Semibold}]{Source Sans Pro}
+%\setmainhangulfont[Ligatures=TeX,
+%   BoldFont={KoPubBatang Medium}]{KoPubBatang Light}
+%\setsanshangulfont[Ligatures=TeX,
+%   BoldFont={KoPubDotum Medium}]{KoPubDotum Light}
+%\setmainhanjafont[Ligatures=TeX,
+%   BoldFont={KoPubBatang Medium}]{KoPubBatang Light}
+%\setsanshanjafont[Ligatures=TeX,
+%   BoldFont={KoPubDotum Medium}]{KoPubDotum Light}
+%\xetexkofontregime[puncts=prevfont, colons=prevfont, cjksymbols=hangul]{latin}
+
+% 줄간격
+\linespread{1.4}
+% 멀티라인 수식의 줄간격도 덩달아 넓어지는 것을 방지
+\everydisplay{\setstretch{1.2}}
+
+
+%% 색깔 설정
+\RequirePackage[dvipsnames,svgnames,x11names]{xcolor}
+% Pantone Fashion Color: Spring 2014
+\definecolor{PlacidBlue}{cmyk}{.47,.17,.02,.0}
+\definecolor{VioletTulip}{cmyk}{.44,.39,.0,.0}
+\definecolor{Hemlock}{cmyk}{.39,.04,.35,.0}
+\definecolor{Paloma}{cmyk}{.35,.24,.27,.0}
+\definecolor{Sand}{cmyk}{.20,.27,.48,.0}
+\definecolor{Freesia}{cmyk}{.0,.14,.100,.0}
+\definecolor{Cayenne}{cmyk}{.06,.74,.56,.0}
+\definecolor{CelosiaOrange}{cmyk}{.0,.63,.80,.0}
+\definecolor{RadiantOrchid}{cmyk}{.32,.65,.0,.0}
+\definecolor{DazzlingBlue}{cmyk}{.92,.57,.0,.0}
+\definecolor{PurpleHaze}{cmyk}{.56,.51,.15,.0}
+\definecolor{Comfrey}{cmyk}{.74,.28,.63,.10}
+\definecolor{MagentaPurple}{cmyk}{.51,.94,.24,.24}
+
+\colorlet{MainColorOne}{Comfrey}
+\colorlet{MainColorTwo}{PurpleHaze}
+
+\RequirePackage{tikz}
+\RequirePackage{tikzpagenodes}
+\RequirePackage{calc}
+
+% 일반적인 페이지 스타일
+\pagestyle{hangul}
+
+%% 조금 더 멋을 부리자. KNUworkshop
+
+% \copypagestyle{KNUworkshop}{companion}
+\makepagestyle{KNUworkshop}
+
+\makeheadrule{KNUworkshop}{0pt}{0pt}
+
+% 쪽 번호 자릿수. 세 자리 숫자가 들어갈 폭을 가지도록 함. 
+\newlength\pagenumwidth
+\settowidth{\pagenumwidth}{999}
+
+%% 쪽 번호 들어가는 상자
+\tikzset{pagefooter/.style={
+anchor=base,font=\sffamily\bfseries\small,
+text=white,fill=MainColorOne!60,text centered,
+text depth=20mm,text width=\pagenumwidth}}
+
+\makeoddhead{KNUworkshop}{}{}{%
+\sffamily\footnotesize%
+\begin{tikzpicture}[xshift=-.75\baselineskip,yshift=.25\baselineskip,overlay,fill=MainColorOne!50,draw=MainColorOne!50]
+\fill circle(3pt);
+\draw[semithick](0,0) -- (-\textwidth-2\spinemargin,0);
+\end{tikzpicture} \rightmark}
+
+\makeevenhead{KNUworkshop}{%
+\sffamily\footnotesize\leftmark\,\, 
+\begin{tikzpicture}[xshift=.5\baselineskip,yshift=.25\baselineskip,overlay,fill=MainColorOne!50,draw=MainColorOne!50]\fill (0,0) circle (3pt); \draw[semithick](\textwidth+2\spinemargin,0) -- (0,0);\end{tikzpicture}}{}{}
+
+\makeoddfoot{KNUworkshop}{}{}{\tikz[baseline]\node[pagefooter]{\thepage};}
+
+\makeevenfoot{KNUworkshop}{\tikz[baseline]\node[pagefooter]{\thepage};}{}{}
+
+\copypagestyle{chapter}{KNUworkshop}
+\makeoddhead{chapter}{}{}{}
+\makeevenhead{chapter}{}{}{}
+
+
+%% 페이지 스타일의 원리를 보여주는 
+\makepagestyle{PageStylePrinciple}
+%% 쪽 번호 들어가는 상자
+\tikzset{pageheader/.style={
+anchor=base,font=\sffamily\bfseries\small,
+text=white,fill=MainColorTwo!60,text centered,
+text height=20mm,text width=\pagenumwidth,}}
+
+\makeoddhead{PageStylePrinciple}{}{\rightmark}{\tikz[baseline,overlay,]\node[pageheader]{\thepage};}
+
+\makeevenhead{PageStylePrinciple}{\tikz[baseline,overlay,]\node[pageheader]{\thepage};}{\leftmark}{}
+
+\makeoddfoot{PageStylePrinciple}{}{\textsf{\thetitle}}{}
+
+\makeevenfoot{PageStylePrinciple}{}{\textsf{\theauthor}}{}
+
+
+% \makeatletter
+\def\@hgpsmarks{%
+      \let\@mkboth\markboth
+      \def\chaptermark##1{%
+        \markboth{%
+          \ifnum \c@secnumdepth >\m@ne
+            \if@mainmatter
+              \hchaptertitlehead\enskip%\ %
+            \fi
+          \fi
+          ##1}{}}%
+      \def\tocmark{\markboth{\contentsname}{\contentsname}}%
+      \def\lofmark{\markboth{\listfigurename}{\listfigurename}}%
+      \def\lotmark{\markboth{\listtablename}{\listtablename}}%
+      \def\bibmark{\markboth{\bibname}{\bibname}}%
+      \def\indexmark{\markboth{\indexname}{\indexname}}%
+      \def\sectionmark##1{%
+        \markright{%
+%% disabled printing \thesection.
+%          \ifnum \c@secnumdepth >\z@
+%          \fi
+% enabled printing \thesection.
+          \ifnum \c@secnumdepth >\z@
+            \thesection \enskip\ %
+          \fi
+          ##1}}%
+    }
+\makepsmarks{KNUworkshop}{\@hgpsmarks}
+% \makeatother
+
+% 챕터 스타일
+\RequirePackage{ob-chapstyles}
+
+% 장제목 스타일
+\makechapterstyle{KNUchapter}{%
+   \setlength{\afterchapskip}{40pt}
+  \renewcommand*{\chapterheadstart}{\vspace*{-3\onelineskip}}
+  \renewcommand*{\afterchapternum}{\par\nobreak\vskip 25pt}
+   \renewcommand*{\chapnamefont}{\normalfont\LARGE\flushright}
+   \renewcommand*{\chapnumfont}{\normalfont\HUGE\color{MainColorOne}}
+   \renewcommand*{\chaptitlefont}{\color{MainColorOne}\sffamily\HUGE\bfseries\flushright}%\flushright}
+%   \renewcommand*{\printchaptername}{%
+%     \chapnamefont\MakeUppercase{\@chapapp}}
+  \renewcommand*{\prechapternum}{\chapnamefont\MakeUppercase{Chapter}}
+  \renewcommand*{\postchapternum}{%
+			 \makebox[0pt][l]{%
+	        \hspace{1em}{\color{MainColorOne!50}\rule{\midchapskip+\spinemargin}{\beforechapskip}}
+			}}
+   \renewcommand*{\chapternamenum}{}
+  \setlength{\beforechapskip}{18mm}%  \numberheight
+  \setlength{\midchapskip}{\paperwidth}% \barlength
+  \addtolength{\midchapskip}{-\textwidth}
+  \addtolength{\midchapskip}{-\spinemargin}
+   \renewcommand*{\printchapternum}{%
+       \hspace{1em}\resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}}
+  % \renewcommand*{\printchapternum}{%
+     % \makebox[0pt][c]{%
+       % \hspace{.8em}%
+       % \resizebox{!}{\beforechapskip}{\chapnumfont \thechapter}%
+       % \hspace{.8em}%
+       % % \rule{\midchapskip+\spinemargin}{\beforechapskip}%
+     % }
+   % }%
+   \makeoddfoot{plain}{}{}{\normalfont\normalsize\sffamily\thepage}
+   }
+
+
+% 섹션/ 서브섹션 바꾸기
+\setsechook{%
+\setsecnumformat{\thesection\quad}
+\setsecheadstyle{\sffamily\bfseries\Large\color{MainColorOne}}
+\setsubsecheadstyle{\sffamily\bfseries\color{MainColorTwo}}
+\hangsecnum}
+
+
+
+% 정리류 
+% \makeatletter
+% \newtheorem{thm}{정리}[chapter]
+% \newtheorem{cor}[thm]{보조정리}
+% \renewcommand{\proofname}{증명}
+
+\newcounter{thm} % 새 카운터를 만들고
+\setcounter{thm}{0} % 0으로 초기화
+
+\newenvironment{thm}[1][\empty]{% 옵션 변수 하나를 받을 예정
+\refstepcounter{thm} % 이게 있어야 번호가 순차적으로 늘어나며 \label과 \ref 가능
+\begin{framed}
+\ifx#1\empty
+\noindent{\bfseries\sffamily정리 \thechapter.\thethm}\quad
+\else
+\noindent{\bfseries\sffamily정리 \thechapter.\thethm\enskip ({\small#1})}\quad % 정리 [ ] 안에 있는 부가 설명을 괄호 ( ) 안에 표시
+\fi
+}{
+\end{framed}
+}
+
+\colorlet{shadecolor}{MainColorOne!20}
+\newenvironment{cor}[1][\empty]{
+% \refstepcounter{thm} % 앞에서 선언했으니깐 이것 필요 없어
+\begin{shaded}
+\ifx#1\empty
+\noindent{\bfseries\sffamily 보조정리 \thechapter.\thethm}\quad % 정리의 카운터를 이어서 사용
+\else
+\noindent{\bfseries\sffamily 보조정리 \thechapter.\thethm\enskip ({\small#1})}\quad 
+\fi
+}{
+\end{shaded}
+}
+
+\renewcommand{\proofname}{\color{MainColorOne}{\bfseries\sffamily 증명}}
+\renewcommand\qedsymbol{\color{MainColorOne!50}■} % QED 마크 변경
+ 
+
+\renewenvironment{proof}[1][\empty]{%
+\par%
+  \pushQED{\qed} % \qedhere 쓰기 위한 장치 ①. from amsthm.sty
+\begin{description}
+\ifx#1\empty
+\item[\bfseries\sffamily\color{MainColorOne}증명]
+\else
+\item[\bfseries\sffamily\color{MainColorOne}증명({\small#1})] \quad
+\fi
+}{\popQED  % \qedhere 쓰기 위한 장치 ②
+\end{description}%
+\@endpefalse%
+\par%
+}
+% \makeatother
+
+
+%차례 만져주기
+%본문에서 subsubsection까지 번호가 붙음.
+\setsecnumdepth{subsection}
+\maxsecnumdepth{subsection}
+
+%toc에서 section까지 번호가 붙음.
+\maxtocdepth{subsection}
+\settocdepth{subsection}
+
+
+%차례에서 들여쓰기 따위 자잘한 설정
+\renewcommand{\cftchapterfont}{\large\bfseries\color{MainColorTwo}}
+%\renewcommand{\cftchapterleader}{/~}
+%\renewcommand{\cftchapterafterpnum}{\cftparfillskip}
+\renewcommand{\cftchapternumwidth}{4.0em}
+%\cftsetindents{chapter}{0em}{3.5em}
+%\cftsetindents{section}{3.5em}{2.5em}
+
+\renewcommand{\cftsectionpresnum}{\raggedright} % note the double `l'
+\renewcommand{\cftsectionnumwidth}{2.3em}
+\renewcommand{\cftsectionindent}{4.1em}
+% \renewcommand{\cftsectionnumwidth}{2.5em}
+
+\renewcommand{\cftsubsectionindent}{6.5em}
+\renewcommand{\cftsubsectionnumwidth}{3.0em}
+
+
+% 찾아보기 (Index}
+\RequirePackage{makeidx}
+
+\DeclareRobustCommand{\myem}[2][\empty]{%
+\ifx#1\empty
+#2\index{#2}%
+\else
+#2\index{#2}(#1)\index{#1}%
+\fi}
+
+\makeindex
+
+\RequirePackage{multicol} % 3단 조판하려고
+
+\makeatletter
+\renewenvironment{theindex}{%
+  \renewcommand\indexspace{\vskip\onelineskip}
+    \@restonecoltrue
+    \setlength{\columnseprule}{\indexrule}%
+    \setlength{\columnsep}{\indexcolsep}%
+  \chapter*{\indexname}
+  \markright{\indexname}
+  \preindexhook
+  \setlength{\columnsep}{1.8em}%
+  \begin{multicols}{3}%
+  \linespread{1.2}\small
+  \small
+  \spaceskip=.275em plus .1em minus .3pt
+  \flushcolumns
+  \indexmark
+    \phantomsection
+    \addcontentsline{toc}{chapter}{\indexname}%
+    \parindent\z@
+  \parskip\z@ \@plus .3\p@\relax
+  \let\item\@idxitem}%
+ {\end{multicols}
+  }
+
+\renewcommand{\@idxitem}{\par\raggedright\hangindent 20\p@}
+
+\makeatother
+
+
+% 캡션 제목과 내용 스타일
+\captiondelim{\quad}
+\captionnamefont{\small\sffamily}
+\captiontitlefont{\small\normalfont}
+
