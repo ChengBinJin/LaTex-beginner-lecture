@@ -2,4 +2,4 @@
 *.sty.bak
 *.log
 *.bib.bak
-
+.DS_Store
