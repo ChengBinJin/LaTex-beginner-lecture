@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[footnote]{oblivoir}
 % documentclass: article, book, report, amsart, amsbook, memoir, oblivoir, etc.
 
 \usepackage{kotex, graphicx}
@@ -29,7 +29,30 @@ D  E
 
 `졸려!'
 
+아래 문장에서 한 군데만 작게 하고 싶어요.
+
+괜찮아요? {\tiny 작아서} 많이 놀랬죠?
+
+\begin{footnotesize}
+이 문단 전체를 작게 하고 싶어요. \footnote{이건 각주!}
+
+작아졌지요?
+\end{footnotesize}
+
 \section{감사의 말}
 감사합니다.
+
+\begin{flushleft}
+This text is\\ left-aligned. \LaTeX{} is not trying to make each line the same length.
+\end{flushleft}
+
+\begin{flushright}
+This text is right-\\ aligned.
+\LaTeX{} is not trying to make each line the same length.
+\end{flushright}
+
+\begin{center}
+At the center \\ of the earth
+\end{center}
 
 \end{document}
