@@ -2,6 +2,13 @@
 
 \usepackage{mathtools}
 \usepackage{amssymb, amsmath}
+% amssymb: ams symbol
+\usepackage{amsthm}
+% amsthm: ams theorem
+
+\newtheorem*{thm}{정리}
+\newtheorem*{defn}{정의}
+% * can help to ignore numbering
 
 \begin{document}
 
@@ -37,5 +44,78 @@ a^{x+y} = a^x a^y
 \end{equation*}
 
 \[ a^{x+y} = a^x a^y \]
+
+\[ \overline{a+b} = \overline{a} + \overline{b} \]
+
+\[ \underline{a+b} = \underline{a} + \underline{b} \]
+
+\[ \underbrace{1+ \cdots + 1}\]
+
+\[ \overbrace{1+ \cdots +1} \]
+
+\[ \vec{a}=\left(3,0,0\right) \]
+
+\[ \overrightarrow{a}=\left(3,0,0\right) \]
+
+\[ \overleftarrow{a}=\left(3,0,0\right) \]
+
+\[ id = \sigma^{-1} \cdot \sigma \cdot \]
+
+\[\begin{matrix}
+A & B & C \\
+d & e & f \\
+1 & 2 & 3 \\
+\end{matrix}
+\]
+
+\[\begin{pmatrix}
+A & B & C \\
+d & e & f \\
+1 & 2 & 3 \\
+\end{pmatrix}
+\]
+
+\[\begin{bmatrix}
+A & B & C \\
+d & e & f \\
+1 & 2 & 3
+\end{bmatrix}
+\]
+
+\[ \underset{under}{baseline} \]
+
+\[ \overset{over}{baseline} \]
+
+\[\sum_{\substack{1 \leq i \leq  q\\
+1 \leq j \leq q \\
+1 \leq k \leq r}
+} a_{ij} b_{jk} c_{ki}
+\]
+
+\[ A=\{ x \in \mathbb{R} | x^2=a, \text{where $a$ is positive}\} \]
+
+\[ A=\{ x \in \mathbb{R} \mid x^2=a, \text{where $a$ is positive} \} \]
+
+\begin{thm}
+\[ A=\{ x \in \mathbb{R} \mid x^2=a, \text{where $a$ is positive} \} \]
+\end{thm}
+
+\begin{defn}
+$\mathbb{R}$ is the set of all real numbers.
+\end{defn}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
