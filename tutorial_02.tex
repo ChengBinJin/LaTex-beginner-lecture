@@ -4,10 +4,13 @@
 \usepackage{amssymb, amsmath}
 % amssymb: ams symbol
 \usepackage{amsthm}
+\usepackage{bbm}
 % amsthm: ams theorem
 
-\newtheorem*{thm}{정리}
-\newtheorem*{defn}{정의}
+\newtheorem{defn}{정의}
+\newtheorem{add}[defn]{부연설명}
+\newtheorem{thm}{정리}[section]
+\theoremstyle{definition}
 % * can help to ignore numbering
 
 \begin{document}
@@ -96,26 +99,100 @@ d & e & f \\
 
 \[ A=\{ x \in \mathbb{R} \mid x^2=a, \text{where $a$ is positive} \} \]
 
-\begin{thm}
+\section{Hi}
+\begin{thm} \label{thm:1}
 \[ A=\{ x \in \mathbb{R} \mid x^2=a, \text{where $a$ is positive} \} \]
 \end{thm}
+\begin{proof}[증명]
+Hello world!
 
+\[ id = \sigma^{-1} \cdot \sigma \cdot \qedhere \]
+% \qedhere: put box on the top
+\end{proof}
+
+\section{Hello}
 \begin{defn}
 $\mathbb{R}$ is the set of all real numbers.
 \end{defn}
 
+\[ id = \sigma^{-1} \cdot \sigma \cdot \]
 
+정리 \ref{thm:1}에 의해서
 
+정리 \eqref{thm:1}에 의해서
 
+Note that
+\begin{equation} \label{eq:1}
+A \leq B
+\end{equation}
+and
+\begin{equation} \label{eq:2}
+B \leq A.
+\end{equation}
+So by (\ref{eq:1}) and \eqref{eq:2}, we conclude that $A=B$.
 
+\begin{equation}
+\begin{split}
+Hf(x) &= \mathrm{p.v.}\frac{1}{\pi} \int_{\mathbb{R}} \frac{f(y)}{x-y}dy\\
+&= \lim_{\varepsilon \rightarrow 0} \frac{1}{\pi} \int_{|x-y|>\varepsilon} \frac{f(y)}{x-y}dy
+\end{split}
+\end{equation}
 
+\begin{equation}
+\begin{aligned}
+Hf(x) &= \mathrm{p.v.} \frac{1}{\pi} \int_{\mathbb{R}} \frac{f(y)}{x-y}dy \\
+&= \lim_{\varepsilon \rightarrow 0} \frac{1}{\pi} \int_{|x-y|>\varepsilon} \frac{f(y)}{x-y}dy
+\end{aligned}
+\end{equation}
 
+\begin{align}
+Hf(x) &= \mathrm{p.v.} \frac{1}{\pi} \int_{\mathbb{R}} \frac{f(y)}{x-y}dy \\
+&= \lim_{\varepsilon \rightarrow 0} \frac{1}{\pi} \int_{|x-y|>\varepsilon} \frac{f(y)}{x-y}dy
+\end{align}
 
+\begin{align}
+Hf(x) &= \mathrm{p.v.} \frac{1}{\pi} \int_{\mathbb{R}} \frac{f(y)}{x-y}dy \\
+&= \lim_{\varepsilon \rightarrow 0} \frac{1}{\pi} \int_{|x-y|>\varepsilon} \frac{f(y)}{x-y}dy \nonumber
+\end{align}
 
+\begin{align*}
+Hf(x) &= \mathrm{p.v.} \frac{1}{\pi} \int_{\mathbb{R}} \frac{f(y)}{x-y}dy \\
+&= \lim_{\varepsilon \rightarrow 0} \frac{1}{\pi} \int_{|x-y|>\varepsilon} \frac{f(y)}{x-y}dy
+\end{align*}
 
+Cobb-Douglas 모델의 MRS(Marginal rate of substitution)\를 구해보도록 하자. $u(x_1, x_2) = x_1^c x_2^c$이라 할 때,
+\begin{align*}
+\mathrm{MRS} &= -\frac{\partial u(x_1, x)2)/\partial x_1}{\partial u (x_1, x_2) / \partial x_2}\\
+&= -\frac{cx_1^{c-1} x_2^{d}}{dx_1^c x_2^{d-1}} \\
+&= -\frac{cx_2}{dx_1}
+\end{align*}
+와 같다.
 
+\begin{align*}
+a_{11} &= b_{11} &
+a_{12} &= b_{12} \\
+a_{21} &= b_{21} &
+a_{22} &= b_{22} + c_{22}
+\end{align*}
 
+\begin{flalign*}
+a_{11} &= b_{11} &
+a_{12} &= b_{12} \\
+a_{21} &= b_{21} &
+a_{22} &= b_{22} + c_{22}
+\end{flalign*}
 
+align환경이면서 한 행에 부연설명을 하고자 할 때 적합한 환경이다.
+\begin{alignat}{2}  %영역을 크게 두 개로 나눔
+x &= y_1 - y_2 + y_3 - y_5 + y_8 - \dots &\quad& \text{by } \\
+&= y' \circ y^* && \text{by } \\
+&= y(0) y' && \text {by Axiom 1.}
+\end{alignat}
 
+$\mathbbm{1}$
+
+$\mathbbmss{ABCdef12}$
+
+%$\mathbbmtt{ABCdef12}$
 
 \end{document}
