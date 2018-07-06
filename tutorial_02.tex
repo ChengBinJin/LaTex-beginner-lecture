@@ -5,6 +5,7 @@
 % amssymb: ams symbol
 \usepackage{amsthm}
 \usepackage{bbm}
+\usepackage{kotex}
 % amsthm: ams theorem
 
 \newtheorem{defn}{정의}
@@ -12,6 +13,14 @@
 \newtheorem{thm}{정리}[section]
 \theoremstyle{definition}
 % * can help to ignore numbering
+
+\newcommand{\bZ}{{\mathbb{Z}}}
+\newcommand{\norm}[1]{{}\left \Vert #1 \right \Vert}
+
+\makeatletter
+\newcases{PDEcases}{\quad}{%
+\hfil$\m@th\displaystyle{##}$}{{##}\hfil}{\lbrace}{.}
+\makeatother 
 
 \begin{document}
 
@@ -194,5 +203,69 @@ $\mathbbm{1}$
 $\mathbbmss{ABCdef12}$
 
 %$\mathbbmtt{ABCdef12}$
+
+$\mathcal{ABC}$
+
+%$\mathscr{ABC}$
+
+%$\mathds{ABC1}$
+
+$\mathfrak{ABCdef123}$
+
+$\mathbb{Z}$
+
+$\bZ$
+
+\[ \left \Vert a \right \Vert \]
+
+\[ \norm{a} \]
+
+(Good!) $f\in L^p(\mathbb{R}) (1<p<\infty)$에 대하여
+\[ Hf(x)=\mathrm{p.v.}\int_{\mathbb{R}} \frac{f(y)}{\pi (x-y)}dy \]
+와 같이 정의한 변환을 힐버트 변환이라 한다.
+
+(Bad!) $f\in L^p(\mathbb{R}) (1<p<\infty)$에 대하여
+
+\[ Hf(x)=\mathrm{p.v.}\int_{\mathbb{R}} \frac{f(y)}{\pi (x-y)}dy \]
+와 같이 정의한 변환을 힐버트 변환이라 한다.
+
+% Don't use eqnarry!
+
+\[
+\sum_{n=1}^\infty |a_n b_n| \leq \left(\sum_{n=1}^\infty |a_n|^p \right)^{\frac{1}{p}} \left(\sum_{n=1}^\infty |b_n|^q \right)^{\frac{1}{1}} 
+\]
+
+\begin{align*}
+& = \int_{0}^{\infty} \left|\int_{0}^{1} \frac{g\left(x\left(1+y\right)\right)}{y^{1-\alpha}}dy\right|^{p}dx.
+\intertext{Now by the Minkowski's integral intequality, we get}
+\int_{0}^{\infty}\left|\int_{0}^{1}\frac{g\left(x\left(1+y\right)\right)}{y^{1-\alpha}}dy\right|^{p}dx &
+....
+\end{align*}
+
+$\begin{pmatrix*}[r]
+-2 & 3 \\
+1 & -2 \\
+\end{pmatrix*}$
+
+\[
+\begin{PDEcases}
+-\nu \triangle u +u \cdot \nabla u +\nabla p=f&in $\Omega$ \\
+\mathrm{div}\, u =0& in $\Omega$\\
+u=0& on $\partial \Omega$,
+\end{PDEcases}
+\]
+
+\[
+\left\{
+\begin{alignedat}{2}
+-\triangle u +\nabla p &= -w \cdot \nabla w + f &&\qquad \mbox{in $\Omega$},\\
+\mathrm{div}\, u &=0 &&\qquad \mbox{in $\Omega$},\\
+u &=0 &&\qquad \mbox{on $\partial \Omega$},
+\end{alignedat} 
+\right.
+\]
+
+
+
 
 \end{document}
