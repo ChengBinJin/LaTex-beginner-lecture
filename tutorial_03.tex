@@ -1,10 +1,33 @@
 \documentclass[11pt]{article}
 
 \usepackage{graphicx}
+\graphicspath{{./pictures/}{./pictures01}}
 
 \begin{document}
-\includegraphics[width=0.6\textwidth]{pictures/img01.jpg}
+\begin{center}
+\includegraphics[width=0.6\textwidth,angle=45]{img01.jpg}
+\end{center}
+%\includegraphics[height=6cm]{pictures/img02.jpg}
+% \columnwidth, \textheight, \textwidth
 
+\begin{center}
+\includegraphics[width=0.6\textwidth, page={2}]{RedVelvet}
+\end{center}
 
+\begin{center}
+\includegraphics[width=0.6\textwidth, page={1}]{RedVelvet}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth, page={3}]{RedVelvet}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth, page={5}]{RedVelvet}
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth, page={4}]{RedVelvet}
+\end{center}
 
 \end{document}
