@@ -1,0 +1,62 @@
+\documentclass[chapter, footnote, a4paper, 10pt]{oblivoir}
+
+\usepackage{fapapersize}  %options: dbl4x6 / newmum / mum
+% \usefapapersize{188mm,257mm,25mm,25mm,25mm,30mm}
+\usefapapersize{*,*,25mm,25mm,25mm,30mm}
+
+\usepackage{mathtools, amsthm, amssymb}
+\usepackage{graphicx, jiwonlipsum}
+\graphicspath{{pictures/}}
+
+\usepackage{tabu}
+\usepackage{enumitem}
+
+\linespread{1.4}
+
+\newtheorem{thm}{정리}[chapter]
+\newtheorem{cor}[thm]{보조정리}
+\renewcommand{\proofname}{증명}
+
+\DeclareRobustCommand{\myem}[2][\empty]{%
+\ifx#1\empty
+#2\index{#2}%
+\else
+#2\index{#2}(#1)\index{#1}%
+\fi}
+
+\makeindex
+
+\setmainhangulfont{HANSolM.ttf}
+
+\begin{document}
+
+\begin{itemize}
+\item 첫 번째
+\item 두 번째
+\item 세 번째
+\end{itemize}
+
+\begin{enumerate}
+\item 첫 번째
+\item 두 번째
+\item 세 번째
+\end{enumerate}
+
+\noindent
+Hello world!
+
+\begin{description}
+\item[Stupid BBB] things will not become smart because they are in a list. Things will not become smart because they are in a list.
+\item[Smart] things, though, can be presented beautifully in a list.
+\end{description}
+
+\tableofcontents*
+
+\input{chap1-fluctuations}
+\input{chap2-curve_surface}
+\input{chap3-jiwon}
+\input{chap4-LetterS}
+
+\printindex
+
+\end{document}
